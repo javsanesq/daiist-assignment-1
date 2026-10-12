@@ -10,4 +10,4 @@ with ZipFile(DEST, 'w', compression=ZIP_DEFLATED) as z:
         relative = path.relative_to(ROOT)
         if path.is_file() and not any(part in EXCLUDE for part in relative.parts) and path.name != '.DS_Store':
             z.write(path, arcname=str(Path(ROOT.name) / relative))
-print(f'Created {DEST} ({DEST.stat().st_size:,} bytes). Nothing submitted.')
+print(f'Created {DEST} ({DEST.stat().st_size:,} bytes). Nothing uploaded to Blackboard.')
